@@ -1,0 +1,91 @@
+.container{
+    width: 100%; 
+}
+.links {
+    text-align: center;
+}
+.links button {
+    border-radius: 2%;
+    border: none;
+    margin: 1%;
+    padding: 2%;
+}
+.links button a {
+    text-decoration: none;
+}
+.active {
+    background-color: #DC7633; 
+   
+}
+.active a {
+    color: white;
+}
+
+.form{
+    width: 90%;
+    box-shadow: 0 0 5px #cccccc;
+    border: 1px solid #cccccc;
+    margin: auto;
+    border-radius: 5%;
+}
+.form2{
+    width: 90%;
+    box-shadow: 0 0 5px #cccccc;
+    border: 1px solid #cccccc;
+    margin: auto;
+    margin-top: 5%;
+    border-radius: 5%;
+}
+.form-group {
+    width: 85%;
+    margin: auto;
+    margin-top: 4%;
+}
+.form-group label{
+    width: 100%;
+    display: block;
+    margin-bottom:3%; 
+}
+.form-field {
+    width: 100%;
+    margin: auto;
+    height: 30px;
+}
+.btn-search {
+    width: 90%;
+    text-align: right;
+    
+}
+.btn-search button {
+    height: 30px;
+    width: 50%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    color: white;
+    border: 0;
+    border-radius: 5%;
+    
+}
+.range {
+    display: block;
+    display: flex;
+    flex-direction: row;
+}
+.min{
+    width: 50%;
+}
+.max{
+    width: 50%;
+    text-align: right;
+}
+.selected {
+    text-align: center;
+}
+.btn-enable{
+    background-color: #2074ED  ;
+    cursor: pointer;
+}
+.btn-disable{
+    background-color: #b3c6ff;
+    cursor: not-allowed;
+}

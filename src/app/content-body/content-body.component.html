@@ -1,0 +1,62 @@
+<div class="container">
+    <div class="search-details">
+        <div class="way">
+            <span *ngIf="searchDetails!=undefined">
+            <span *ngIf="searchDetails.searchType=='twoWay'">
+                    {{searchDetails.origin | titlecase}} >  {{searchDetails.destination | titlecase}} >  {{searchDetails.origin | titlecase}}
+            </span>
+            <span *ngIf="searchDetails.searchType=='oneWay'">
+                    {{searchDetails.origin | titlecase}} >  {{searchDetails.destination |titlecase}}
+            </span>
+            </span>
+            <span *ngIf="searchDetails==undefined">
+                   Search To Expore Flight
+            </span>
+        </div>
+        <div class="dates" *ngIf="searchDetails!=undefined">
+                <div>Depart : {{searchDetails.departureDate | date:'fullDate'}}</div>
+        
+                <span *ngIf="searchDetails.searchType=='twoWay'">
+                <div>Return : {{searchDetails.returnDate | date:'fullDate'}}</div>
+                </span>
+        </div>
+    </div>
+    <div class="search-result">
+            <div class="no-service" *ngIf="flights.length==0 && searchDetails!=undefined"> No Services Available at this Route</div>
+        <div class="card" *ngFor="let flight of flights">
+            <div class="cost">
+                <span *ngIf="searchDetails.searchType=='twoWay'">
+                            {{(flight.toFroFare)*searchDetails.numberOfPassengers | currency : 'INR':true}}
+                </span>
+                <span *ngIf="searchDetails.searchType=='oneWay'">
+                            {{(flight.toFare)*searchDetails.numberOfPassengers | currency : 'INR':true}}
+                </span>
+            </div>
+            <div class="flights">
+                <div class="part1">
+                    <div class="name"> {{flight.toName}}</div>
+                    <div class="origine">{{flight.source | titlecase}} >  {{flight.destination |titlecase}}</div>
+                    <div class="depart">Depart: {{flight.toDepart}}</div>
+                    <div class="arrive">Arrive: {{flight.toArrive}}</div>
+                </div>
+                <div class="part2" *ngIf="searchDetails.searchType=='twoWay'">
+                        <div class="name"> {{flight.froName}}</div>
+                        <div class="origine">{{flight.destination | titlecase}} >{{flight.source |titlecase}}</div>
+                        <div class="depart">Depart: {{flight.froDepart}}</div>
+                        <div class="arrive">Arrive: {{flight.froArrive}}</div>
+                </div>
+                <div class="part3">
+                    <div class="img">
+                            <img src="{{flight.img}}" alt="" width="150" height="100">
+                    </div>
+                    <div>
+                        <button class="btn">Book this flight</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+    </div>
+   
+</div>

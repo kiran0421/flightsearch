@@ -1,0 +1,13 @@
+<div class="container">
+    <header>
+        <app-head></app-head>
+    </header>
+    <div class="content">
+       <aside>
+            <app-side-search (search)="search($event)"></app-side-search>
+       </aside>
+       <article>
+            <app-content-body [flights]="filteredFlights" [searchDetails]="searchDetails"></app-content-body>
+       </article>
+    </div>
+</div>
